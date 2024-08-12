@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node app.ts",
-    "lint": "eslint"
+    "lint": "eslint",
+    "populate": "ts-node db/populateDB.ts"
   },
   "repository": {
     "type": "git",
