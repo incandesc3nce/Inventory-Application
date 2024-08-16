@@ -46,8 +46,9 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   background-color: #9333ea;
 }
 
