@@ -6,10 +6,10 @@ import Genre from '../types/Genre';
 
 const getItemRows = async () => {
   const items: Item[] = await getItems();
-  items.map(async (item: Item) => {
+  await Promise.all(items.map(async (item: Item) => {
     const genre: Genre = await getGenreById(item.genre_id);
     item.genre = genre.name;
-  })
+  }));
   return items;
 }
 
