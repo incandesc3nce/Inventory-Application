@@ -90,13 +90,13 @@ footer a {
 }
 
 .spacer {
-  aspect-ratio: 1/0.6;
+  aspect-ratio: 16/9;
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-.layer {
+.footer-layer {
   background-image: url('../svg/layered-waves-haikei.svg');
 }
