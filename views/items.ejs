@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Items List</title>
+  <link rel="stylesheet" href="/css/globals.css" type="text/css">
+  <link rel="stylesheet" href="/css/items.css" type="text/css">
+</head>
+<body>
+  <%- include('partials/header') %>
+    <main>
+      <ul class="items-list">
+        <% items.map((item) => { %>
+          <li class="item-card">
+            <a href='/items/<%= item.id %>'>
+              <img class="item-img" src=<%= item.img_url %> alt="">
+              <div class="item-info">
+                <h2 class="item-title"><%= item.title %></h2>
+                <p class="item-genre"><%= item.genre %></p>
+              </div>
+            </a>
+          </li>
+        <%}); %>
+      </ul>
+    </main>
+  <%- include('partials/footer') %>
+</body>
+</html>
