@@ -55,4 +55,12 @@ const getItemsByCategory = async (id: number) => {
   return rows;
 };
 
-export { getItems, getItemById, createItem, updateItem, deleteItem , getItemsByCategory };
+const getItemsByGenre = async (id: number) => {
+  const { rows } = await pool.query(
+    'SELECT * FROM items WHERE genre_id = $1;',
+    [id]
+  );
+  return rows;
+};
+
+export { getItems, getItemById, createItem, updateItem, deleteItem , getItemsByCategory, getItemsByGenre };
