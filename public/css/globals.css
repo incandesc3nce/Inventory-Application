@@ -33,12 +33,21 @@ h6 {
 
 /* global styles */
 
+:root {
+  --primary-color: #9333ea;
+  --secondary-color: #fc3085;
+  --bg-color: #001220;
+  --card-color: #282828;
+  --card-hover: #3f3f3f;
+  --text-color: #fff;
+}
+
 * {
   font-family: 'Inter', sans-serif;
 }
 
 body {
-  background-color: #001220;
+  background-color: var(--bg-color);
 }
 
 header {
@@ -49,7 +58,7 @@ header {
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: #9333ea;
+  background-color: var(--primary-color);
   z-index: 2;
 }
 
@@ -64,7 +73,7 @@ header {
 
 .navbar a {
   text-decoration: none;
-  color: #fff;
+  color: var(--text-color);
   font-size: 1.2rem;
   transition: all 0.2s;
 }
@@ -79,15 +88,15 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #9333ea;
+  background-color: var(--primary-color);
 }
 
 footer p {
-  color: #fff;
+  color: var(--text-color);
 }
 
 footer a {
-  color: #fc3085;
+  color: var(--secondary-color);
   text-decoration: none;
 }
 
