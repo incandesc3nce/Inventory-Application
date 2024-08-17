@@ -16,7 +16,6 @@
 }
 
 .category {
-  padding: 20px;
   background-color: var(--card-color);
   transition: all 0.2s;
   border-radius: 15px;
@@ -25,6 +24,10 @@
 .category a {
   text-decoration: none;
   color: #fff;
+}
+
+.category .content {
+  padding: 20px;
 }
 
 .category h2 {
