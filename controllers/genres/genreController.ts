@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
-import { getItemsByGenre } from '../db/queries/itemsQueries';
-import { getGenreById } from '../db/queries/genresQueries';
-import Item from '../types/Item';
-import Genre from '../types/Genre';
+import { getItemsByGenre } from '../../db/queries/itemsQueries';
+import { getGenreById } from '../../db/queries/genresQueries';
+import Item from '../../types/Item';
+import Genre from '../../types/Genre';
 
 const getItemsByGenreRows = async (id: number) => {
   const genre: Genre = await getGenreById(id);

@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { itemsController } from '../controllers/itemsController';
-import { itemController } from '../controllers/itemController';
+import { itemsController } from '../controllers/items/itemsController';
+import { itemController } from '../controllers/items/itemController';
 
 const itemsRouter: Router = Router();
 

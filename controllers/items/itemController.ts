@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
-import { getItemById } from '../db/queries/itemsQueries';
-import { getGenreById } from '../db/queries/genresQueries';
-import { getCategoryById } from '../db/queries/categoriesQueries';
-import Item from '../types/Item';
-import Genre from '../types/Genre';
-import Category from '../types/Category';
+import { getItemById } from '../../db/queries/itemsQueries';
+import { getGenreById } from '../../db/queries/genresQueries';
+import { getCategoryById } from '../../db/queries/categoriesQueries';
+import Item from '../../types/Item';
+import Genre from '../../types/Genre';
+import Category from '../../types/Category';
 
 const getItemRow = async (id: number) => {
   const item: Item = await getItemById(id);

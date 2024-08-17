@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { getCategories } from '../db/queries/categoriesQueries';
-import Category from '../types/Category';
+import { getCategories } from '../../db/queries/categoriesQueries';
+import Category from '../../types/Category';
 
 const getCategoryRows = async () => {
   const categories: Category[] = await getCategories();

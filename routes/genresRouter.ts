@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { genresController } from '../controllers/genresController';
-import { genreController } from '../controllers/genreController';
+import { genresController } from '../controllers/genres/genresController';
+import { genreController } from '../controllers/genres/genreController';
 
 const genresRouter: Router = Router();
 
