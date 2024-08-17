@@ -1,0 +1,38 @@
+.categories-list {
+  list-style: none;
+}
+
+.categories-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.categories-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.category {
+  padding: 20px;
+  background-color: var(--card-color);
+  transition: all 0.2s;
+  border-radius: 15px;
+}
+
+.category a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.category h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.category:hover {
+  transform: scale(1.1);
+  background-color: var(--card-hover);
+}
