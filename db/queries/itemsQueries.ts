@@ -47,4 +47,12 @@ const deleteItem = async (id: number) => {
   return rows[0];
 };
 
-export { getItems, getItemById, createItem, updateItem, deleteItem };
+const getItemsByCategory = async (id: number) => {
+  const { rows } = await pool.query(
+    'SELECT * FROM items WHERE category_id = $1;',
+    [id]
+  );
+  return rows;
+};
+
+export { getItems, getItemById, createItem, updateItem, deleteItem , getItemsByCategory };
