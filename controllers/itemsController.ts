@@ -11,9 +11,9 @@ const getItemRows = async () => {
     item.genre = genre.name;
   }));
   return items;
-}
+};
 
 export const itemsController = async (req: Request, res: Response) => {
   const items: Item[] = await getItemRows();
   res.render('items', { title: 'Items', items: items });
-}
+};
