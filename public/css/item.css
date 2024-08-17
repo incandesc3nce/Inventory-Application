@@ -1,0 +1,44 @@
+.item-container {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.item-img {
+  width: clamp(20vw, 80vw, 450px);
+  height: auto;
+  object-fit: cover;
+}
+
+.item-info {
+  color: #fff;
+  max-width: 80ch;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.item-title {
+  font-size: 4rem;
+}
+
+.item-description {
+  font-size: 1.5rem;
+}
+
+.item-extra {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.back-link {
+  color: #fff;
+  font-size: 1rem;
+  width: fit-content;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background-color: #9333ea;
+  border-radius: 0.5rem;
+  margin-left: auto;
+}
