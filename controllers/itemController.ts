@@ -8,6 +8,9 @@ import Category from '../types/Category';
 
 const getItemRow = async (id: number) => {
   const item: Item = await getItemById(id);
+  if (!item) {
+    throw new Error(`404: Couldn't find item with id ${id}`);
+  }
   const genre: Genre = await getGenreById(item.genre_id);
   const category: Category = await getCategoryById(item.category_id);
   item.genre = genre.name;
@@ -17,6 +20,11 @@ const getItemRow = async (id: number) => {
 
 export const itemController = async (req: Request, res: Response) => {
   const id: number = parseInt(req.params.id);
-  const item: Item = await getItemRow(id);
-  res.render('item', { title: item.title, item: item });
+  try {
+    const item: Item = await getItemRow(id);
+    res.render('item', { title: item.title, item: item });
+  } catch (err) {
+    console.log(err);
+    res.render('404');
+  }
 };
