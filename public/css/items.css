@@ -50,5 +50,4 @@
 .item-card:hover {
   transform: scale(1.05);
   background-color: var(--card-hover);
-  box-shadow: 0 0 20px 5px var(--primary-color);
 }
