@@ -19,7 +19,10 @@
           <p class="item-category"><b>Category:</b> <%= item.category %></p>
           <p class="item-genre"><b>Genre:</b> <%= item.genre %></p>
         </div>
-        <a href="/items" class="back-link">Back to Items</a>
+        <div class="buttons-container">
+          <a href="<%= item.id %>/edit" class="edit-item">Edit Item</a>
+          <a href="/items" class="back-link">Back to Items</a>
+        </div>
       </div>
     </section>
   </main>
