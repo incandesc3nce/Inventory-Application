@@ -20,7 +20,10 @@
           <p class="item-genre"><b>Genre:</b> <%= item.genre %></p>
         </div>
         <div class="buttons-container">
-          <a href="<%= item.id %>/edit" class="edit-item">Edit Item</a>
+          <div class="btn-actions">
+            <a href="<%= item.id %>/edit" class="edit-item">Edit Item</a>
+            <a href="<%= item.id %>/delete" class="delete-item">Delete Item</a>
+          </div>
           <a href="/items" class="back-link">Back to Items</a>
         </div>
       </div>
