@@ -22,6 +22,7 @@
 
 .add-item {
   border: 2px dashed var(--text-color);
+  min-height: 442px;
 }
 
 .item-card .content {

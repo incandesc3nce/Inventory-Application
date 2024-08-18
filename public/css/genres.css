@@ -16,10 +16,13 @@
   width: 100%;
 }
 
-.genre {
-  background-color: var(--card-color);
+.genre, .add-genre {
   transition: all 0.2s;
   border-radius: 15px;
+}
+
+.genre {
+  background-color: var(--card-color);
 }
 
 .genre a {
@@ -35,6 +38,46 @@
   font-size: 2rem;
   margin: 0;
   text-align: center;
+}
+
+.add-genre {
+  border: 2px dashed var(--text-color);
+}
+
+.add-genre a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-decoration: none;
+  color: var(--text-color);
+  height: 100%;
+}
+
+.add-genre .add-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.add-genre .content {
+  padding: 20px 20px 0 20px;
+}
+
+.add-genre .plus {
+  font-size: 3rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .genre:hover {
