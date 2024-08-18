@@ -19,11 +19,16 @@
           id="title"
           name="title"
           value="<%= item.title %>"
-          required 
+          required
           minlength="1"
-          maxlength="150"/>
+          maxlength="150" />
         <label for="description">Description:</label>
-        <textarea id="description" name="description" required minlength="3" maxlength="500">
+        <textarea
+          id="description"
+          name="description"
+          required
+          minlength="3"
+          maxlength="500">
 <%= item.description %></textarea
         >
         <label for="img_url">Image URL:</label>
@@ -32,8 +37,8 @@
           id="img_url"
           name="img_url"
           value="<%= item.img_url %>"
-          required 
-          minlength="1"/>
+          required
+          minlength="1" />
         <label for="category">Category:</label>
         <select id="category" name="category">
           <% categories.map((category) => { if (category.name === item.category)
