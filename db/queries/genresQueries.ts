@@ -12,13 +12,6 @@ const getGenreById = async (id: number) => {
   return rows[0];
 };
 
-const getGenreByName = async (name: string) => {
-  const { rows } = await pool.query('SELECT * FROM genres WHERE name = $1;', [
-    name,
-  ]);
-  return rows[0];
-};
-
 const createGenre = async (name: string) => {
   const { rows } = await pool.query(
     'INSERT INTO genres (name) VALUES ($1) RETURNING *;',
@@ -46,7 +39,6 @@ const deleteGenre = async (id: number) => {
 export {
   getGenres,
   getGenreById,
-  getGenreByName,
   createGenre,
   updateGenre,
   deleteGenre,

@@ -12,14 +12,6 @@ const getCategoryById = async (id: number) => {
   return rows[0];
 };
 
-const getCategoryByName = async (name: string) => {
-  const { rows } = await pool.query(
-    'SELECT * FROM categories WHERE name = $1;',
-    [name]
-  );
-  return rows[0];
-};
-
 const createCategory = async (name: string, description: string) => {
   const { rows } = await pool.query(
     'INSERT INTO categories (name, description) VALUES ($1, $2) RETURNING *;',
@@ -51,7 +43,6 @@ const deleteCategory = async (id: number) => {
 export {
   getCategories,
   getCategoryById,
-  getCategoryByName,
   createCategory,
   updateCategory,
   deleteCategory,
