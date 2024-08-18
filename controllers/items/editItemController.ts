@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { getItemById, updateItem } from "../../db/queries/itemsQueries";
-import { getCategories, getCategoryByName } from "../../db/queries/categoriesQueries";
-import { getGenres, getGenreByName } from "../../db/queries/genresQueries";
+import { getCategories } from "../../db/queries/categoriesQueries";
+import { getGenres } from "../../db/queries/genresQueries";
 import Item from "../../types/Item";
 import Category from "../../types/Category";
 import Genre from "../../types/Genre";
@@ -25,23 +25,17 @@ export const editItemController = async (req: Request, res: Response) => {
 };
 
 export const updateItemController = async (req: Request, res: Response) => {
-  const { id, title, description, category, genre, img_url } = req.body;
-  if (!id || !title || !description || !category || !genre || !img_url) {
+  const { id, title, description, categoryId, genreId, img_url } = req.body;
+  if (!id || !title || !description || !categoryId || !genreId || !img_url) {
     return res.status(400).send("All input is required");
-  }
-
-  const categoryRow: Category = await getCategoryByName(category);
-  const genreRow: Genre = await getGenreByName(genre);
-  if (!categoryRow || !genreRow) {
-    return res.status(400).send("Invalid category or genre");
   }
 
   await updateItem(
     id,
     title,
     description,
-    categoryRow.id,
-    genreRow.id,
+    categoryId,
+    genreId,
     img_url,
   );
 
