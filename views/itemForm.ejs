@@ -11,12 +11,19 @@
     <%- include('partials/header') %>
     <main>
       <h1 class="form-title"><%= title %></h1>
-      <form action="/items/<%= item.id %>/edit" method="post">
-        <input type="hidden" name="id" value="<%= item.id %>" />
+      <form action="<%= action %>" method="post">
+        <input type="hidden" name="id" value="<%= item.id %>" required />
         <label for="title">Title:</label>
-        <input type="text" id="title" name="title" value="<%= item.title %>" />
+        <input
+          type="text"
+          id="title"
+          name="title"
+          value="<%= item.title %>"
+          required 
+          minlength="1"
+          maxlength="150"/>
         <label for="description">Description:</label>
-        <textarea id="description" name="description">
+        <textarea id="description" name="description" required minlength="3" maxlength="500">
 <%= item.description %></textarea
         >
         <label for="img_url">Image URL:</label>
@@ -24,7 +31,9 @@
           type="text"
           id="img_url"
           name="img_url"
-          value="<%= item.img_url %>" />
+          value="<%= item.img_url %>"
+          required 
+          minlength="1"/>
         <label for="category">Category:</label>
         <select id="category" name="category">
           <% categories.map((category) => { if (category.name === item.category)
