@@ -24,7 +24,7 @@ export const editItemController = async (req: Request, res: Response) => {
   res.render("itemForm", {
     title: "Edit Item",
     item: item,
-    action: `/items/${id}?_method=PUT`,
+    action: `/items/${id}/edit`,
     categories: categories,
     genres: genres,
   });
