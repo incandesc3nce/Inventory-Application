@@ -2,11 +2,6 @@ main {
   color: var(--text-color);
 }
 
-.form-title {
-  font-size: 2rem;
-  margin: 1rem;
-}
-
 form {
   display: flex;
   flex-direction: column;
