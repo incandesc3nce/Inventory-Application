@@ -50,7 +50,7 @@ body {
   background-color: var(--bg-color);
 }
 
-h1 {
+.page-heading {
   color: var(--text-color);
   font-size: 2rem;
   margin: 20px;
