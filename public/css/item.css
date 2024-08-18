@@ -32,13 +32,22 @@
   gap: 1rem;
 }
 
-.back-link {
+.buttons-container {
+  margin-left: auto;
+}
+
+.back-link, .edit-item {
   color: var(--text-color);
   font-size: 1rem;
   width: fit-content;
   text-decoration: none;
   padding: 0.5rem 1rem;
-  background-color: var(--primary-color);
   border-radius: 0.5rem;
-  margin-left: auto;
+}
+
+.edit-item {
+  background-color: #4949ff;
+}
+.back-link {
+  background-color: var(--primary-color);
 }
