@@ -22,9 +22,9 @@
       <select id="category" name="category">
         <% categories.map((category) => {
           if (category === item.category) { %>
-            <option value="<%= category %>" selected><%= category %></option>
+            <option value="<%= category.id %>" selected><%= category.name %></option>
           <% } else { %>
-            <option value="<%= category %>"><%= category %></option>
+            <option value="<%= category.id %>"><%= category.name %></option>
           <% } %>
         <% }) %>
       </select>
@@ -32,9 +32,9 @@
       <select id="genre" name="genre">
         <% genres.map((genre) => {
           if (genre === item.genre) { %>
-            <option value="<%= genre %>" selected><%= genre %></option>
+            <option value="<%= genre.id %>" selected><%= genre.name %></option>
           <% } else { %>
-            <option value="<%= genre %>"><%= genre %></option>
+            <option value="<%= genre.id %>"><%= genre.name %></option>
           <% } %>
         <% }) %>
       <button type="submit">Submit</button>
