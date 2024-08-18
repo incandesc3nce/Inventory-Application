@@ -16,10 +16,14 @@
   width: 100%;
 }
 
-.category {
-  background-color: var(--card-color);
+.category,
+.add-category {
   transition: all 0.2s;
   border-radius: 15px;
+}
+
+.category {
+  background-color: var(--card-color);
 }
 
 .category a {
@@ -34,6 +38,33 @@
 .category h2 {
   font-size: 2rem;
   margin: 0;
+}
+
+.add-category {
+  border: 2px dashed var(--text-color);
+}
+
+.add-category a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.add-category .content {
+  padding: 20px;
+}
+
+.add-category .plus {
+  font-size: 5rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .category:hover {
