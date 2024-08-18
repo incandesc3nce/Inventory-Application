@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { getItemById, updateItem } from "../../db/queries/itemsQueries";
-import { getCategories } from "../../db/queries/categoriesQueries";
-import { getGenres } from "../../db/queries/genresQueries";
+import { getCategories, getCategoryById } from "../../db/queries/categoriesQueries";
+import { getGenres, getGenreById } from "../../db/queries/genresQueries";
 import Item from "../../types/Item";
 import Category from "../../types/Category";
 import Genre from "../../types/Genre";
@@ -14,6 +14,11 @@ const getItemRow = async (id: number) => {
 export const editItemController = async (req: Request, res: Response) => {
   const id: number = parseInt(req.params.id);
   const item: Item = await getItemRow(id);
+  const itemCategory = await getCategoryById(item.category_id);
+  const itemGenre = await getGenreById(item.genre_id);
+  item.category = itemCategory.name;
+  item.genre = itemGenre.name;
+
   const categories: Category[] = await getCategories();
   const genres: Genre[] = await getGenres();
   res.render("itemForm", {
@@ -25,8 +30,8 @@ export const editItemController = async (req: Request, res: Response) => {
 };
 
 export const updateItemController = async (req: Request, res: Response) => {
-  const { id, title, description, categoryId, genreId, img_url } = req.body;
-  if (!id || !title || !description || !categoryId || !genreId || !img_url) {
+  const { id, title, description, category, genre, img_url } = req.body;
+  if (!id || !title || !description || !category || !genre || !img_url) {
     return res.status(400).send("All input is required");
   }
 
@@ -34,8 +39,8 @@ export const updateItemController = async (req: Request, res: Response) => {
     id,
     title,
     description,
-    categoryId,
-    genreId,
+    category,
+    genre,
     img_url,
   );
 
