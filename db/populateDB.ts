@@ -40,7 +40,7 @@ const itemsTable = `
   CREATE TABLE IF NOT EXISTS items (
   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   title VARCHAR(255) NOT NULL,
-  description VARCHAR(255) NOT NULL,
+  description VARCHAR(500) NOT NULL,
   category_id INTEGER NOT NULL,
   FOREIGN KEY (category_id) REFERENCES categories(id),
   genre_id INTEGER NOT NULL,
