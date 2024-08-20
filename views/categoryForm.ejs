@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/globals.css" />
+  <link rel="stylesheet" href="/css/form.css" />
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main>
+    <h1 class="page-heading"><%= title %></h1>
+    <form action="<%= action %>" method="post">
+      <input type="hidden" name="id" value="<%= category.id %>" required />
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value="<%= category.name %>"
+        required
+        minlength="1"
+        maxlength="150" />
+      <label for="description">Description:</label>
+      <textarea
+        id="description"
+        name="description"
+        required
+        minlength="3"
+        maxlength="500">
+        <%= category.description %></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>
