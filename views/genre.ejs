@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/globals.css" type="text/css" />
+  <link rel="stylesheet" href="/css/items.css" type="text/css" />
+  <link rel="stylesheet" href="/css/genre.css" type="text/css" />
+</head>
+<body>
+  <%- include('partials/header') %>
+  <h1 class="page-heading"><%= title %></h1>
+  <main>
+    <section class="genre-container">
+      <div class="genre-info">
+        <h2 class="genre-title"><%= genre.name %> </h2>
+        <p class="genre-description"><%= genre.description %></p>
+        <div class="buttons-container">
+          <div class="btn-actions">
+            <a href="<%= message === '' ? `${genre.id}/edit` : 'edit'%>" class="edit-item">Edit Genre</a>
+            <a href="<%= message === '' ? `${genre.id}/delete` : 'delete'%>" class="delete-item">Delete Genre</a>
+          </div>
+          <a href="/genres" class="back-link">Back to Genres</a>
+        </div>
+      </div>
+      <%- include('partials/error', { message: message }) %>
+    </section>
+    <section>
+      <h2 class="page-heading">Genre Items</h2>
+      <%- include('partials/itemsList', { items: items }) %>
+    </section>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>
