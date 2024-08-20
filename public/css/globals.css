@@ -143,3 +143,16 @@ footer a {
 .back-link {
   background-color: var(--primary-color);
 }
+
+.error {
+  background-color: #af0b0b;
+  border-radius: 15px;
+  max-width: 300px;
+}
+
+.error-msg {
+  color: var(--text-color);
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
