@@ -21,8 +21,9 @@ const getItemsByGenreRows = async (id: number) => {
 export const genreController = async (req: Request, res: Response) => {
   const id: number = parseInt(req.params.id);
   try {
+    const genre: Genre = await getGenreById(id); 
     const items: Item[] = await getItemsByGenreRows(id);
-    res.render('items', { title: 'Genre', items: items });
+    res.render('genre', { title: 'Genre', genre: genre, items: items, message: '' });
   } catch (err) {
     console.log(err);
     res.render('404');
