@@ -24,8 +24,9 @@ const getItemsByCategoryRows = async (id: number) => {
 export const categoryController = async (req: Request, res: Response) => {
   const id: number = parseInt(req.params.id);
   try {
+    const category: Category = await getCategoryById(id);
     const items: Item[] = await getItemsByCategoryRows(id);
-    res.render('items', { title: 'Category', items: items });
+    res.render('category', { title: 'Category', category: category, items: items });
   } catch (err) {
     console.log(err);
     res.render('404');
