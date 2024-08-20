@@ -18,8 +18,8 @@
           <p class="category-description"><%= category.description %></p>
           <div class="buttons-container">
             <div class="btn-actions">
-              <a href="<%= category.id %>/edit" class="edit-item">Edit Category</a>
-              <a href="<%= category.id %>/delete" class="delete-item">Delete Category</a>
+              <a href="<%= message === '' ? `${category.id}/edit` : 'edit'%>" class="edit-item">Edit Category</a>
+              <a href="<%= message === '' ? `${category.id}/delete` : 'delete'%>" class="delete-item">Delete Category</a>
             </div>
             <a href="/categories" class="back-link">Back to Categories</a>
           </div>
