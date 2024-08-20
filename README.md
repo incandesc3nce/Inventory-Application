@@ -46,7 +46,7 @@ PORT - The port for the server (default is 3000)
 CREATE DATABASE inventory;
 \c inventory; /* psql connect */
 ```
-and run the following command in your terminal to populate the database
+and run the following command in your terminal to populate the database with the necessary tables and example data
 
 ```bash
 npm run populate
