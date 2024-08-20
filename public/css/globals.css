@@ -160,3 +160,13 @@ footer a {
 .hidden {
   display: none;
 }
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 10px;
+  }
+  
+}
