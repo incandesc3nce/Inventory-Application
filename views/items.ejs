@@ -11,31 +11,7 @@
   <%- include('partials/header') %>
     <main>
       <h1 class="page-heading">Items List</h1>
-      <ul class="items-list">
-        <% items.map((item) => { %>
-          <li class="item-card">
-            <a href='/items/<%= item.id %>'>
-              <div class="content">
-                <img class="item-img" src=<%= item.img_url %> alt="">
-                <div class="item-info">
-                  <h2 class="item-title"><%= item.title %></h2>
-                  <p class="item-genre"><%= item.genre %></p>
-                </div>
-              </div>
-            </a>
-          </li>
-        <%}); %>
-        <li class="add-item">
-          <a href="/items/new">
-            <div class="content">
-              <h2>Add New Item</h2>
-              <div class="plus">
-                <p>+</p>
-              </div>
-            </div>
-          </a>
-        </li>
-      </ul>
+      <%- include('partials/itemsList', { items: items }) %>
     </main>
   <%- include('partials/footer') %>
 </body>
