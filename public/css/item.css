@@ -32,29 +32,3 @@
   flex-direction: column;
   gap: 1rem;
 }
-
-.buttons-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.back-link, .edit-item, .delete-item {
-  color: var(--text-color);
-  font-size: 1rem;
-  width: fit-content;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-}
-
-.edit-item {
-  background-color: #4949ff;
-}
-.delete-item {
-  background-color: #dd3939;
-}
-.back-link {
-  background-color: var(--primary-color);
-}
