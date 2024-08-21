@@ -16,7 +16,7 @@ This is an inventory application that allows users to add, update, delete and vi
 
 ## Live Preview
 
-Live Preview is available at [Inventory-Application](https://inventory-application-qkx3.onrender.com/items).
+Live Preview is available at [Inventory-Application](https://inventory-application-qkx3.onrender.com/).
 
 
 ## Installation
