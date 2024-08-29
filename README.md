@@ -16,7 +16,9 @@ This is an inventory application that allows users to add, update, delete and vi
 
 ## Live Preview
 
-Live Preview is available at [Inventory-Application](https://inventory-application-qkx3.onrender.com/).
+Live Preview is available on:
+- [Railway](https://inventory-application-production-4134.up.railway.app/) (faster page load time)
+- [Render](https://inventory-application-qkx3.onrender.com/) (use if Railway isn't available)
 
 
 ## Installation
