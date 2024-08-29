@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* css reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* global styles */
+
+:root {
+  --primary-color: #9333ea;
+  --secondary-color: #fc3085;
+  --bg-color: #001220;
+  --card-color: #282828;
+  --card-hover: #3f3f3f;
+  --text-color: #fff;
+}
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+.page-heading {
+  color: var(--text-color);
+  font-size: 2rem;
+  margin: 20px;
+}
+
+header {
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+  z-index: 2;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  transition: all 0.2s;
+}
+
+.navbar a:hover {
+  transform: scale(1.2);
+}
+
+footer {
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+
+footer p {
+  color: var(--text-color);
+}
+
+footer a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.spacer {
+  aspect-ratio: 16/9;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.footer-layer {
+  background-image: url('../svg/layered-waves-haikei.svg');
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.back-link, .edit-item, .delete-item {
+  color: var(--text-color);
+  font-size: 1rem;
+  width: fit-content;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.edit-item {
+  background-color: #4949ff;
+}
+.delete-item {
+  background-color: #dd3939;
+}
+.back-link {
+  background-color: var(--primary-color);
+}
+
+.error {
+  background-color: #af0b0b;
+  border-radius: 15px;
+  max-width: 300px;
+}
+
+.error-msg {
+  color: var(--text-color);
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 10px;
+  }
+  
+}

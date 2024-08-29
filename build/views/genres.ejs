@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/globals.css">
+  <link rel="stylesheet" href="/css/genres.css">
+  <%- include('partials/favicon') %>
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main>
+    <h1 class="page-heading"><%= title %></h1>
+    <section class="genres-container">
+      <ul class="genres-list">
+        <% genres.map((genre) => { %>
+          <li class="genre">
+            <a href="/genres/<%= genre.id %>">
+              <div class="content">
+                <h2><%= genre.name %></h2>
+              </div>
+            </a>
+          </li>
+        <% }) %>
+        <li class="add-genre">
+          <a href="/genres/new">
+            <div class="add-content">
+              <div class="plus">
+                <p>+</p>
+              </div>
+            </div>
+          </a>
+      </ul>
+    </section>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>

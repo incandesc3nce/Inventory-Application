@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Items List</title>
+  <link rel="stylesheet" href="/css/globals.css" type="text/css">
+  <link rel="stylesheet" href="/css/items.css" type="text/css">
+  <%- include('partials/favicon') %>
+</head>
+<body>
+  <%- include('partials/header') %>
+    <main>
+      <h1 class="page-heading">Items List</h1>
+      <%- include('partials/itemsList', { items: items }) %>
+    </main>
+  <%- include('partials/footer') %>
+</body>
+</html>

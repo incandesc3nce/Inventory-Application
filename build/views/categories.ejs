@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/globals.css">
+  <link rel="stylesheet" href="/css/categories.css">
+  <%- include('partials/favicon') %>
+</head>
+<body>
+  <%- include('partials/header') %>
+    <main>
+      <h1 class="page-heading"><%= title %></h1>
+      <section class="categories-container">
+        <ul class="categories-list">
+        <% categories.map((category) => { %>
+          <li class="category">
+            <a href="/categories/<%= category.id %>">
+              <div class="content">
+                <h2><%= category.name %></h2>
+                <p><%= category.description %></p>
+              </div>
+            </a>
+          </li>
+        <% }) %>
+        <li class="add-category">
+          <a href="/categories/new">
+            <div class="add-content">
+              <div class="plus">
+                <p>+</p>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+      </section>
+    </main>
+  <%- include('partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/globals.css" type="text/css" />
+    <link rel="stylesheet" href="/css/items.css" type="text/css" />
+    <link rel="stylesheet" href="/css/category.css" type="text/css" />
+    <%- include('partials/favicon') %>
+  </head>
+  <body>
+    <%- include('partials/header') %>
+    <h1 class="page-heading"><%= title %></h1>
+    <main>
+      <section class="category-container">
+        <div class="category-info">
+          <h2 class="category-title"><%= category.name %> </h2>
+          <p class="category-description"><%= category.description %></p>
+          <div class="buttons-container">
+            <div class="btn-actions">
+              <a href="<%= message === '' ? `${category.id}/edit` : 'edit'%>" class="edit-item">Edit Category</a>
+              <a href="<%= message === '' ? `${category.id}/delete` : 'delete'%>" class="delete-item">Delete Category</a>
+            </div>
+            <a href="/categories" class="back-link">Back to Categories</a>
+          </div>
+        </div>
+        <%- include('partials/error', { message: message }) %>
+      </section>
+      <section>
+        <h2 class="page-heading">Category Items</h2>
+        <%- include('partials/itemsList', { items: items }) %>
+      </section>
+    </main>
+    <%- include('partials/footer') %>
+  </body>
+</html>

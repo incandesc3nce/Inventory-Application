@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= item.title %></title>
+  <link rel="stylesheet" href="/css/globals.css" type="text/css">
+  <link rel="stylesheet" href="/css/item.css" type="text/css">
+  <%- include('partials/favicon') %>
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main>
+    <section class="item-container">
+      <img class="item-img" src=<%= item.img_url %> alt="">
+      <div class="item-info">
+        <h1 class="item-title"><%= item.title %></h1>
+        <p class="item-description"><%= item.description %></p>
+        <div class="item-extra">
+          <p class="item-category"><b>Category:</b> <%= item.category %></p>
+          <p class="item-genre"><b>Genre:</b> <%= item.genre %></p>
+        </div>
+        <div class="buttons-container">
+          <div class="btn-actions">
+            <a href="<%= item.id %>/edit" class="edit-item">Edit Item</a>
+            <a href="<%= item.id %>/delete" class="delete-item">Delete Item</a>
+          </div>
+          <a href="/items" class="back-link">Back to Items</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <%- include('partials/footer') %>
+ </body>
+</html>

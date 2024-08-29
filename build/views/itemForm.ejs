@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/globals.css" />
+    <link rel="stylesheet" href="/css/form.css" />
+    <%- include('partials/favicon') %>
+  </head>
+  <body>
+    <%- include('partials/header') %>
+    <main>
+      <h1 class="page-heading"><%= title %></h1>
+      <form action="<%= action %>" method="post">
+        <input type="hidden" name="id" value="<%= item.id %>" required />
+        <label for="title">Title:</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          value="<%= item.title %>"
+          required
+          minlength="1"
+          maxlength="150" />
+        <label for="description">Description:</label>
+        <textarea
+          id="description"
+          name="description"
+          required
+          minlength="3"
+          maxlength="500">
+<%= item.description %></textarea
+        >
+        <label for="img_url">Image URL:</label>
+        <input
+          type="text"
+          id="img_url"
+          name="img_url"
+          value="<%= item.img_url %>"
+          required
+          minlength="1" />
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+          <% categories.map((category) => { if (category.name === item.category)
+          { %>
+          <option value="<%= category.id %>" selected>
+            <%= category.name %>
+          </option>
+          <% } else { %>
+          <option value="<%= category.id %>"><%= category.name %></option>
+          <% } %> <% }) %>
+        </select>
+        <label for="genre">Genre:</label>
+        <select id="genre" name="genre">
+          <% genres.map((genre) => { %> <% if (genre.name === item.genre) { %>
+          <option value="<%= genre.id %>" selected><%= genre.name %></option>
+          <% } else { %>
+          <option value="<%= genre.id %>"><%= genre.name %></option>
+          <% } %> <% }) %>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+    <%- include('partials/footer') %>
+  </body>
+</html>
